@@ -94,10 +94,10 @@ public final class Fraccion {
 		final int nuevoDenominador = this.denominador * fraccion.denominador;
 		
 		return new Fraccion.Builder()
-				.withNumerador(nuevoNumerador)
-				.withDenominador(nuevoDenominador)
-				.build()
-				.simplificar();
+							.withNumerador(nuevoNumerador)
+							.withDenominador(nuevoDenominador)
+							.build()
+							.simplificar();
 	}
 	
 	/**
@@ -120,9 +120,9 @@ public final class Fraccion {
 	 */
 	public Fraccion inverso() {
 		Fraccion fraccion = new Fraccion.Builder()
-								.withNumerador(-1)
-								.withDenominador(1)
-								.build();
+										.withNumerador(-1)
+										.withDenominador(1)
+										.build();
 		return this.por(fraccion);
 	}
 	/**
@@ -137,9 +137,9 @@ public final class Fraccion {
 		final int nuevoDenominador = this.numerador;
 		
 		return new Fraccion.Builder()
-				.withNumerador(nuevoNumerador)
-				.withDenominador(nuevoDenominador)
-				.build();
+							.withNumerador(nuevoNumerador)
+							.withDenominador(nuevoDenominador)
+							.build();
 	}
 	
 	@Override

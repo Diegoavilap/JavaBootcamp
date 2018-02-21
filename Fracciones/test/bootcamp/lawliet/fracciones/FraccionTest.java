@@ -8,6 +8,14 @@ import static org.hamcrest.CoreMatchers.is;
 
 public class FraccionTest {
 
+	@Test (expected = IllegalArgumentException.class)
+	public void fraccionConDenominadorCero() {
+		Fraccion fraccion = new Fraccion.Builder()
+				.withNumerador(3)
+				.withDenominador(0)
+				.build();
+	}
+	
 	@Test
 	public void simplificarCincuentaYCuatroTreintavos() {
 		Fraccion fraccion = new Fraccion.Builder()
@@ -67,22 +75,22 @@ public class FraccionTest {
 	@Test
 	public void opuestoDeTresMedios() {
 		Fraccion tresMedios = new Fraccion.Builder()
-				.withNumerador(3)
-				.withDenominador(2)
-				.build();
+											.withNumerador(3)
+											.withDenominador(2)
+											.build();
 		assertThat(tresMedios.opuesto().toString(), is("2/3"));
 	}
 	
 	@Test
 	public void tresMediosDivididoEnCincoCuartos() {
 		Fraccion tresMedios = new Fraccion.Builder()
-				.withNumerador(3)
-				.withDenominador(2)
-				.build();
+											.withNumerador(3)
+											.withDenominador(2)
+											.build();
 		Fraccion cincoCuartos = new Fraccion.Builder()
-				.withNumerador(5)
-				.withDenominador(4)
-				.build();
+											.withNumerador(5)
+											.withDenominador(4)
+											.build();
 		
 		assertThat(tresMedios.dividoEn(cincoCuartos).toString(), is("6/5"));
 	}
